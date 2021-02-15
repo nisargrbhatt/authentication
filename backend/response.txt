@@ -1,0 +1,8 @@
+Response Structure:
+{
+  status: Number,
+  message: String,
+  success: Boolean,
+  data: JSON,
+  error: String,
+}
