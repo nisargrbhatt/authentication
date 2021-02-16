@@ -374,3 +374,35 @@ exports.getUserProfile = async (req, res, next) => {
     next(resObj);
   }
 };
+
+exports.getUserData = async (req, res, next) => {
+  let resObj = {
+    status: undefined,
+    response: {
+      message: undefined,
+      success: true,
+      data: undefined,
+      error: undefined,
+    },
+  };
+  try {
+    let user = await User.findById(req.userData.userId);
+    resObj.status = 200;
+    resObj.response.message = "User Data fetched Successfully";
+    resObj.response.success = true;
+    resObj.response.data = {
+      last_login: user.last_login,
+      profile_setup: user.profile_setup,
+    };
+    resObj.response.error = null;
+  } catch (error) {
+    console.log(error);
+    resObj.status = 500;
+    resObj.response.message = "Something went wrong!";
+    resObj.response.success = false;
+    resObj.response.data = null;
+    resObj.response.error = error.stack;
+  } finally {
+    next(resObj);
+  }
+};

@@ -14,5 +14,6 @@ router.get("/checkusername/:username", userControllers.checkUsername);
 router.put("/resetpassword", checkAuth, userControllers.passwordReset);
 router.put("/setprofile", checkAuth, userControllers.setProfile);
 router.get("/getuser", checkAuth, userControllers.getUserProfile);
+router.get("/getuserdata", checkAuth, userControllers.getUserData);
 
 module.exports = router;
