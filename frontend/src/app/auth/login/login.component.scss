@@ -14,12 +14,18 @@ body {
   h2 {
     font-size: 4em;
   }
-  label {
+  .input-box-label {
     display: block;
     font-size: 1.2em;
     margin-bottom: 0.5em;
   }
-  input {
+  .input-check-label {
+    font-size: 1.2em;
+  }
+  input[type="email"],
+  input[type="password"],
+  input[type="submit"],
+  input[type="text"] {
     width: 100%;
     padding: 0.8em;
     margin-bottom: 1em;
@@ -41,7 +47,7 @@ body {
 
     color: white;
     font-weight: bold;
-    background-color: ;
+    background-color: gray;
   }
   .login-btn {
     background-color: #007af3;

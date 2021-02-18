@@ -13,7 +13,6 @@ export class LoginComponent implements OnInit {
   private isAuthenticated = false;
   form: FormGroup;
   showPassword = false;
-
   constructor(private authService: AuthService, private router: Router) {}
 
   ngOnInit(): void {
@@ -44,8 +43,5 @@ export class LoginComponent implements OnInit {
     await this.authService.login(authData);
     this.form.reset();
     this.isLoading = false;
-  }
-  showPasswordChange() {
-    this.showPassword = !this.showPassword;
   }
 }

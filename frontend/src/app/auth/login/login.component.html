@@ -3,25 +3,39 @@
   <h2>Login</h2>
   <div class="login-form">
     <form [formGroup]="form" (submit)="onLogin()">
-      <label for="email"> Email </label>
+      <label class="input-box-label" for="email"> Email </label>
       <input
         name="email"
         type="email"
         placeholder="Enter Your Email"
         formControlName="email"
       />
-      <label for="password">Password</label>
-      <div class="inputBox">
-        <input
-          type="password"
-          name="password"
-          placeholder="Enter Your Password"
-          formControlName="password"
-          #password
-        />
-        <button class="show-btn" (click)="showPasswordChange()">Show</button>
-      </div>
-      <p *ngIf="showPassword">{{ password.value }}</p>
+      <label class="input-box-label" for="password">Password</label>
+
+      <input
+        [type]="showPassword ? 'text' : 'password'"
+        name="password"
+        placeholder="Enter Your Password"
+        formControlName="password"
+        #password
+      />
+      <button
+        matSuffix
+        mat-button
+        *ngIf="!showPassword"
+        (click)="showPassword = true"
+      >
+        <mat-icon>visibility</mat-icon>
+      </button>
+      <button
+        matSuffix
+        mat-button
+        *ngIf="showPassword"
+        (click)="showPassword = false"
+      >
+        <mat-icon>visibility_off</mat-icon>
+      </button>
+
       <input type="submit" class="login-btn" value="Login" />
     </form>
   </div>

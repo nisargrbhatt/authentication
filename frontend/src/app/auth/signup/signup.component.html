@@ -1,1 +1,97 @@
-<p>signup works!</p>
+<app-loading *ngIf="isLoading"></app-loading>
+<div class="main-container" *ngIf="!isLoading">
+  <h2>Signup</h2>
+  <div class="login-form">
+    <form [formGroup]="form">
+      <mat-form-field>
+        <mat-label>Name</mat-label>
+        <input
+          matInput
+          type="text"
+          formControlName="name"
+          placeholder="Enter Your Name"
+        />
+        <mat-error *ngIf="form.get('name').hasError('required')">
+          Please Provide Your Name
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Username</mat-label>
+        <input
+          matInput
+          type="text"
+          formControlName="username"
+          placeholder="Enter Your Username"
+        />
+        <mat-error *ngIf="form.get('username').hasError('required')">
+          Please Provide an Username
+        </mat-error>
+        <mat-error *ngIf="form.get('username').hasError('usernameInUse')"
+          >This Username is already in use.</mat-error
+        >
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input
+          matInput
+          formControlName="email"
+          type="email"
+          placeholder="Enter Your Email"
+        />
+        <mat-error *ngIf="form.get('email').hasError('required')">
+          Please Provide an Email address
+        </mat-error>
+        <mat-error *ngIf="form.get('email').hasError('email')">
+          Please Provide perfect EmailId.
+        </mat-error>
+        <mat-error *ngIf="form.get('email').hasError('emailInUse')">
+          This Email is already in use.
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Password</mat-label>
+        <input
+          matInput
+          [type]="showPassword ? 'text' : 'password'"
+          formControlName="password"
+          placeholder="Enter Your Password"
+          #password
+        />
+        <mat-error *ngIf="form.get('password').hasError('required')">
+          Please Provide a Password
+        </mat-error>
+        <mat-error *ngIf="form.get('password').hasError('minlength')">
+          Password must have length of 6 or higher
+        </mat-error>
+        <button
+          matSuffix
+          mat-button
+          *ngIf="!showPassword"
+          (click)="showPassword = true"
+        >
+          <mat-icon>visibility</mat-icon>
+        </button>
+        <button
+          matSuffix
+          mat-button
+          *ngIf="showPassword"
+          (click)="showPassword = false"
+        >
+          <mat-icon>visibility_off</mat-icon>
+        </button>
+      </mat-form-field>
+
+      <br />
+      <br />
+      <button
+        class="submit-btn"
+        mat-raised-button
+        color="primary"
+        (click)="onSignup()"
+        [disabled]="!checkForm()"
+      >
+        Signup
+      </button>
+    </form>
+  </div>
+</div>

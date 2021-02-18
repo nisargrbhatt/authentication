@@ -1,0 +1,45 @@
+:root {
+  --primary-color: #007af3;
+}
+
+body {
+  margin: 0;
+  background: #f2f2f2;
+  font-family: Poppins;
+}
+.main-container {
+  margin: 10em 4em;
+  padding: 5em 2em;
+
+  h2 {
+    font-size: 4em;
+  }
+  mat-label {
+    display: block;
+    font-size: 1.2em;
+    margin-bottom: 0.5em;
+  }
+
+  mat-form-field {
+    display: block;
+  }
+
+  mat-error {
+    color: red;
+    font-weight: bold;
+  }
+  mat-form-field {
+    padding: 0.5em;
+  }
+}
+.pass-txt {
+  margin-top: 0.5em;
+}
+.submit-btn {
+  width: 100%;
+  padding: 0.8em;
+  margin-bottom: 1em;
+  border-radius: 0.3em;
+  // border: 1px solid gray;
+  box-sizing: border-box;
+}
