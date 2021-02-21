@@ -1,1 +1,8 @@
-<p>profile-show works!</p>
+<app-loading *ngIf="isLoading"></app-loading>
+<div class="main-container" *ngIf="!isLoading">
+  <div class="profile-data">
+    <div class="image" (click)="photoChange()">
+      <img [src]="profile.photo" [alt]="profile.name" />
+    </div>
+  </div>
+</div>

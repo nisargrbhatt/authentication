@@ -1,15 +1,15 @@
-import { ActivatedRoute, ParamMap, Router } from '@angular/router';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { ProfileService } from './../profile.service';
-import { AuthService } from './../../auth/auth.service';
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { AuthService } from 'src/app/auth/auth.service';
+import { ProfileService } from '../profile.service';
 
 @Component({
-  selector: 'app-profile-setup',
-  templateUrl: './profile-setup.component.html',
-  styleUrls: ['./profile-setup.component.scss'],
+  selector: 'app-profile-edit',
+  templateUrl: './profile-edit.component.html',
+  styleUrls: ['./profile-edit.component.scss'],
 })
-export class ProfileSetupComponent implements OnInit {
+export class ProfileEditComponent implements OnInit {
   isLoading = false;
   form: FormGroup;
   private isAuthenticated = false;
@@ -44,7 +44,24 @@ export class ProfileSetupComponent implements OnInit {
         validators: [Validators.required],
       }),
     });
-    this.isLoading = false;
+    this.profileService.getUserProfile().subscribe(
+      (response) => {
+        console.log(response.message);
+        console.log(response.success);
+        this.form.setValue({
+          name: response.data.name,
+          gender: response.data.gender,
+          contact_no: response.data.contact_no,
+          address: response.data.address,
+        });
+        this.isLoading = false;
+      },
+      (error) => {
+        console.log(error);
+        this.router.navigate(['/']);
+        this.isLoading = false;
+      }
+    );
   }
   async onSetProfile() {
     if (this.form.invalid) {

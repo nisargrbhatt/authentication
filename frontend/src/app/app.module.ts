@@ -21,6 +21,9 @@ import { ProfileShowComponent } from './profile/profile-show/profile-show.compon
 import { ProfileSetupComponent } from './profile/profile-setup/profile-setup.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoadingComponent } from './loading/loading.component';
+import { ProfilePhotoComponent } from './profile/dialogs/profile-photo/profile-photo.component';
+import { ProfilePasswordComponent } from './profile/dialogs/profile-password/profile-password.component';
+import { ProfileEditComponent } from './profile/profile-edit/profile-edit.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +36,9 @@ import { LoadingComponent } from './loading/loading.component';
     ProfileShowComponent,
     ProfileSetupComponent,
     LoadingComponent,
+    ProfilePhotoComponent,
+    ProfilePasswordComponent,
+    ProfileEditComponent,
   ],
   imports: [
     BrowserModule,

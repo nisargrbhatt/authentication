@@ -1,0 +1,44 @@
+<app-loading *ngIf="isLoading"></app-loading>
+<div class="main-container" *ngIf="!isLoading">
+  <h2>Profile Update</h2>
+  <form class="profile-form" [formGroup]="form" (submit)="onSetProfile()">
+    <mat-form-field appearance="outline">
+      <mat-label>Name</mat-label>
+      <input
+        type="text"
+        name="name"
+        id="name"
+        formControlName="name"
+        placeholder="Enter Your Name"
+        matInput
+      />
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Gender</mat-label>
+      <mat-select formControlName="gender" aria-placeholder="Gender">
+        <mat-option value="Male">Male</mat-option>
+        <mat-option value="Female">Female</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Contact No</mat-label>
+      <input
+        matInput
+        type="tel"
+        name="contact_no"
+        formControlName="contact_no"
+        placeholder="Enter Your Contact No"
+      />
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Address</mat-label>
+      <textarea
+        cols="30"
+        rows="10"
+        formControlName="address"
+        placeholder="Enter Your Address"
+      ></textarea>
+    </mat-form-field>
+    <button mat-raised-button color="primary" type="submit">Set Profile</button>
+  </form>
+</div>
