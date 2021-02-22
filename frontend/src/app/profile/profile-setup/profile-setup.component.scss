@@ -1,14 +1,30 @@
-body {
-  margin: 0;
-  background: #f2f2f2;
-  font-family: Poppins;
-}
+// body {
+//   margin: 0;
+//   background: #f2f2f2;
+//   font-family: Poppins;
+// }
 .main-container {
   margin: 10em 4em;
   padding: 5em 2em;
+
   h2 {
     font-size: 4em;
   }
-  .profile-form {
+  mat-label {
+    display: block;
+    font-size: 1.2em;
+    // margin-bottom: 0.5em;
+  }
+
+  mat-form-field {
+    display: block;
+  }
+
+  mat-error {
+    color: red;
+    font-weight: bold;
+  }
+  mat-form-field {
+    padding: 0.5em;
   }
 }

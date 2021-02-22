@@ -37,7 +37,9 @@ export class ProfileShowComponent implements OnInit {
       (response) => {
         console.log(response.message);
         console.log(response.success);
+        console.log(response.data);
         this.profile = response.data;
+
         this.isLoading = false;
       },
       (error) => {

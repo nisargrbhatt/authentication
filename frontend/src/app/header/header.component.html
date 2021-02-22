@@ -1,0 +1,27 @@
+<div class="navbar">
+  <div class="container">
+    <a [routerLink]="['/']" class="logo">Product<span>Name</span></a>
+    <span id="menu-btn" class="mobile-menu" (click)="openMenu()"
+      ><mat-icon>menu</mat-icon></span
+    >
+    <nav [class]="menuVar ? 'menu-btn hello' : 'nothing'">
+      <span id="menu-close-btn" class="mobile-menu-exit" (click)="closeMenu()"
+        ><mat-icon>close</mat-icon></span
+      >
+      <ul class="primary-menu">
+        <li *ngIf="!isAuthenticated">
+          <a [routerLink]="['/login']">Login</a>
+        </li>
+        <li *ngIf="!isAuthenticated">
+          <a [routerLink]="['/signup']">Signup</a>
+        </li>
+        <li *ngIf="isAuthenticated">
+          <a [routerLink]="['/profile']">Profile</a>
+        </li>
+        <li *ngIf="isAuthenticated">
+          <a (click)="onLogout()">Logout</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>

@@ -7,6 +7,7 @@ import { AuthGuard } from './auth/auth.guard';
 import { Error404Component } from './error404/error404.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { ProfileEditComponent } from './profile/profile-edit/profile-edit.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, canActivate: [AuthGuard] },
@@ -15,6 +16,11 @@ const routes: Routes = [
   {
     path: 'profile/create',
     component: ProfileSetupComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'profile/edit',
+    component: ProfileEditComponent,
     canActivate: [AuthGuard],
   },
   {

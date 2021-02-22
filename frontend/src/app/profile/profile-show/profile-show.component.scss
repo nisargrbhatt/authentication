@@ -1,0 +1,86 @@
+.main-container {
+  margin: 2em 1em;
+  padding: 3em 1.5em;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  h2 {
+    font-size: 4em;
+  }
+  .profile-data {
+    display: block;
+    font-family: Poppins;
+    font-weight: bold;
+  }
+  .text-data {
+    display: flex;
+    margin: 1em auto 1em auto;
+    border: 2px solid black;
+    border-radius: 2em;
+
+    .item-name {
+      padding-left: 2em;
+      padding-right: 2em;
+      color: #007af3;
+    }
+    .item-data {
+      justify-content: center;
+    }
+  }
+  .image {
+    position: relative;
+    text-align: center;
+    display: block;
+    margin: auto;
+
+    img {
+      border: none;
+      border-radius: 50%;
+      width: 15em;
+    }
+  }
+  .profile-action {
+    display: flex;
+    justify-content: center;
+    .edit-btn {
+      background-color: #007af3;
+      color: white;
+      font-weight: bold;
+      font-size: 1.3em;
+      border: none;
+      margin-top: 1em;
+      margin-bottom: 1em;
+      border-radius: 3em;
+      display: inline-block;
+      padding: 0.8em 1em;
+      width: unset;
+      cursor: pointer;
+    }
+    .password-btn {
+      background-color: #1cf300;
+      color: white;
+      font-weight: bold;
+      font-size: 1.3em;
+      border: none;
+      margin-top: 1em;
+      margin-bottom: 1em;
+      border-radius: 3em;
+      display: inline-block;
+      padding: 0.8em 1em;
+      width: unset;
+      cursor: pointer;
+    }
+    .photo-btn {
+      background-color: #f3db00;
+      color: white;
+      font-weight: bold;
+      font-size: 1.3em;
+      border: none;
+      margin-top: 1em;
+      margin-bottom: 1em;
+      border-radius: 3em;
+      display: inline-block;
+      padding: 0.8em 1em;
+      width: unset;
+      cursor: pointer;
+    }
+  }
+}

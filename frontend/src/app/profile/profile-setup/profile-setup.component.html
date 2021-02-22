@@ -15,7 +15,7 @@
     </mat-form-field>
     <mat-form-field appearance="outline">
       <mat-label>Gender</mat-label>
-      <mat-select formControlName="gender" aria-placeholder="Gender">
+      <mat-select formControlName="gender">
         <mat-option value="Male">Male</mat-option>
         <mat-option value="Female">Female</mat-option>
       </mat-select>
@@ -33,6 +33,7 @@
     <mat-form-field appearance="outline">
       <mat-label>Address</mat-label>
       <textarea
+        matInput
         cols="30"
         rows="10"
         formControlName="address"

@@ -3,6 +3,7 @@ const morgan = require("morgan");
 const cors = require("cors");
 const helmet = require("helmet");
 const mongoose = require("mongoose");
+const path = require("path");
 
 require("dotenv").config();
 const userRoutes = require("./routes/user");
@@ -58,6 +59,8 @@ app.use(morgan("dev"));
 /*=============================================
 =                   Statics                   =
 =============================================*/
+
+app.use("/images", express.static(path.join("images")));
 
 /*============  End of Statics  =============*/
 

@@ -338,6 +338,7 @@ exports.getUserProfile = async (req, res, next) => {
   };
   try {
     let user = await User.findById(req.userData.userId);
+    console.log(user);
     if (!user) {
       resObj.status = 400;
       resObj.response.message = "Bad Request/Bad Data";
@@ -349,19 +350,17 @@ exports.getUserProfile = async (req, res, next) => {
     resObj.status = 200;
     resObj.response.message = "User fetched Successfully";
     resObj.response.success = true;
-    resObj.response.data = user.map((data) => {
-      return {
-        name: data.name,
-        username: data.username,
-        email: data.email,
-        photo: data.photo,
-        gender: data.gender,
-        contact_no: data.contact_no,
-        address: data.address,
-        last_login: data.last_login,
-        updated_at: data.updated_at,
-      };
-    });
+    resObj.response.data = {
+      name: user.name,
+      username: user.username,
+      email: user.email,
+      photo: user.photo,
+      gender: user.gender,
+      contact_no: user.contact_no,
+      address: user.address,
+      last_login: user.last_login,
+      updated_at: user.updated_at,
+    };
     resObj.response.error = null;
   } catch (error) {
     console.log(error);

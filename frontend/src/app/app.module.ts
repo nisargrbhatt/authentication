@@ -24,6 +24,7 @@ import { LoadingComponent } from './loading/loading.component';
 import { ProfilePhotoComponent } from './profile/dialogs/profile-photo/profile-photo.component';
 import { ProfilePasswordComponent } from './profile/dialogs/profile-password/profile-password.component';
 import { ProfileEditComponent } from './profile/profile-edit/profile-edit.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { ProfileEditComponent } from './profile/profile-edit/profile-edit.compon
     ProfilePhotoComponent,
     ProfilePasswordComponent,
     ProfileEditComponent,
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,

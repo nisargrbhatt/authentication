@@ -1,8 +1,50 @@
 <app-loading *ngIf="isLoading"></app-loading>
 <div class="main-container" *ngIf="!isLoading">
+  <h2>Profile</h2>
   <div class="profile-data">
-    <div class="image" (click)="photoChange()">
+    <div class="image">
       <img [src]="profile.photo" [alt]="profile.name" />
     </div>
+    <div class="text-data">
+      <p class="item-name">Name:</p>
+      <p class="item-data">{{ profile.name }}</p>
+    </div>
+    <div class="text-data">
+      <p class="item-name">Email:</p>
+      <p class="item-data">{{ profile.email }}</p>
+    </div>
+    <div class="text-data">
+      <p class="item-name">Username:</p>
+      <p class="item-data">{{ profile.username }}</p>
+    </div>
+    <div class="text-data">
+      <p class="item-name">Gender:</p>
+      <p class="item-data">{{ profile.gender }}</p>
+    </div>
+    <div class="text-data">
+      <p class="item-name">Contact No:</p>
+      <p class="item-data">{{ profile.contact_no }}</p>
+    </div>
+    <div class="text-data">
+      <p class="item-name">Address:</p>
+      <p class="item-data">{{ profile.address }}</p>
+    </div>
+    <div class="text-data">
+      <p class="item-name">Last Login:</p>
+      <p class="item-data">{{ profile.last_login | date }}</p>
+    </div>
+    <div class="text-data">
+      <p class="item-name">Last Update:</p>
+      <p class="item-data">{{ profile.updated_at | date }}</p>
+    </div>
+  </div>
+  <div class="profile-action">
+    <button class="edit-btn" [routerLink]="['/profile/edit']">
+      Edit Profile
+    </button>
+    <button class="password-btn" (click)="passwordChange()">
+      Change Password
+    </button>
+    <button class="photo-btn" (click)="photoChange()">Change Photo</button>
   </div>
 </div>
