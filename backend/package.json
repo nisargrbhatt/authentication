@@ -4,7 +4,7 @@
   "description": "This is the template of authentication setup in MEAN Stack.",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "node server.js"
   },
   "keywords": [
     "auth"

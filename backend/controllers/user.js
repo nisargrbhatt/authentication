@@ -13,6 +13,7 @@ exports.createUser = async (req, res, next) => {
       error: undefined,
     },
   };
+  const url = req.protocol + "://" + req.get("host");
   try {
     const hash = await bcrypt.hash(req.body.password, 10);
     const user = new User({
@@ -20,7 +21,7 @@ exports.createUser = async (req, res, next) => {
       username: req.body.username,
       email: req.body.email,
       password: hash,
-      photo: "http://localhost:3000/images/default.png",
+      photo: url + "/images/" + "default.png",
     });
     let saveResult = await user.save();
     resObj.status = 200;
