@@ -10,53 +10,22 @@ body {
   h2 {
     font-size: 4em;
   }
-  .input-box-label {
+  mat-label {
     display: block;
     font-size: 1.2em;
-    margin-bottom: 0.5em;
   }
-  .input-check-label {
-    font-size: 1.2em;
-  }
-  input[type="email"],
-  input[type="password"],
-  input[type="submit"],
-  input[type="text"] {
-    width: 100%;
-    padding: 0.8em;
-    margin-bottom: 1em;
-    border-radius: 0.3em;
-    border: 1px solid gray;
-    box-sizing: border-box;
-  }
-  .inputBox {
-    display: flex;
-  }
-  .show-btn {
+
+  mat-form-field {
     display: block;
-
-    border: none;
-    font-size: 1.3em;
-    border-radius: 5em;
-    width: unset;
-    cursor: pointer;
-
-    color: white;
-    font-weight: bold;
-    background-color: gray;
+    padding: 0.5em;
   }
-  .login-btn {
-    background-color: #007af3;
-    color: white;
-    font-weight: bold;
-    font-size: 1.3em;
-    border: none;
-    margin-top: 1em;
-    margin-bottom: 5em;
-    border-radius: 5em;
-    display: inline-block;
-    padding: 0.8em 2em;
-    width: unset;
-    cursor: pointer;
-  }
+}
+
+.login-btn {
+  width: 100%;
+  padding: 0.8em;
+  margin-bottom: 1em;
+  border-radius: 0.3em;
+  // border: 1px solid gray;
+  box-sizing: border-box;
 }

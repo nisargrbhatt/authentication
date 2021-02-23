@@ -50,7 +50,7 @@ export class ProfileShowComponent implements OnInit {
   }
   photoChange() {
     const dialogRef = this.dialog.open(ProfilePhotoComponent, {
-      data: { image: this.profile.photo, name: this.profile.name },
+      data: { name: this.profile.name, image: this.profile.photo },
     });
     dialogRef.afterClosed().subscribe((result) => {
       this.ngOnInit();

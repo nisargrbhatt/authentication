@@ -1,0 +1,18 @@
+.photo-container {
+  display: block;
+  form {
+    display: block;
+    padding: 1em;
+  }
+  .image-select {
+    display: block;
+    margin: 1em;
+  }
+  .image-preview {
+    display: block;
+    margin: 1em;
+  }
+  input {
+    visibility: hidden;
+  }
+}

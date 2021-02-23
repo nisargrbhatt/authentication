@@ -19,6 +19,7 @@
   a {
     color: #444444;
     text-decoration: none;
+    cursor: pointer;
   }
 
   ul {
@@ -53,7 +54,7 @@ nav.hello {
       padding: 0.5em;
       font-size: 1.3em;
       text-align: right;
-
+      cursor: pointer;
       &:hover {
         font-weight: bold;
       }

@@ -3,40 +3,58 @@
   <h2>Login</h2>
   <div class="login-form">
     <form [formGroup]="form" (submit)="onLogin()">
-      <label class="input-box-label" for="email"> Email </label>
-      <input
-        name="email"
-        type="email"
-        placeholder="Enter Your Email"
-        formControlName="email"
-      />
-      <label class="input-box-label" for="password">Password</label>
+      <mat-form-field appearance="outline">
+        <mat-label> Email </mat-label>
+        <input
+          matInput
+          name="email"
+          type="email"
+          placeholder="Enter Your Email"
+          formControlName="email"
+        />
+        <mat-error *ngIf="form.get('email').hasError('required')"
+          >Email is Required</mat-error
+        >
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Password</mat-label>
 
-      <input
-        [type]="showPassword ? 'text' : 'password'"
-        name="password"
-        placeholder="Enter Your Password"
-        formControlName="password"
-        #password
-      />
+        <input
+          matInput
+          [type]="showPassword ? 'text' : 'password'"
+          name="password"
+          placeholder="Enter Your Password"
+          formControlName="password"
+        />
+        <button
+          matSuffix
+          mat-button
+          *ngIf="!showPassword"
+          (click)="showPassword = true"
+        >
+          <mat-icon>visibility</mat-icon>
+        </button>
+        <button
+          matSuffix
+          mat-button
+          *ngIf="showPassword"
+          (click)="showPassword = false"
+        >
+          <mat-icon>visibility_off</mat-icon>
+        </button>
+        <mat-error *ngIf="form.get('password').hasError('required')"
+          >Password is Required</mat-error
+        >
+      </mat-form-field>
       <button
-        matSuffix
-        mat-button
-        *ngIf="!showPassword"
-        (click)="showPassword = true"
+        type="submit"
+        mat-raised-button
+        color="primary"
+        class="login-btn"
+        [disabled]="form.invalid"
       >
-        <mat-icon>visibility</mat-icon>
+        Login
       </button>
-      <button
-        matSuffix
-        mat-button
-        *ngIf="showPassword"
-        (click)="showPassword = false"
-      >
-        <mat-icon>visibility_off</mat-icon>
-      </button>
-
-      <input type="submit" class="login-btn" value="Login" />
     </form>
   </div>
 </div>
